@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head id="head">
+    <!-- <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>My Website</title>
+    <!-- <link rel="stylesheet" href="./styles.css"/> -->
+    <style>
+        html{
+                background-color: rosybrown; 
+        }
+        h1{
+                font-style: italic;
+        }
+    </style>
 </head>
 <body>
-    I am Aswathy Subramanian
+    <h1 style="margin: 10px;">I am Aswathy Subramanian</h1>
+    <p class="font-details">There are a lot to take care</p>
+    <button id="button" onclick = "toggleFn()">Toggle CSS</button> 
 </body>
+
+<script>
+   function toggleFn() {
+    const head = document.getElementById('head');
+    const existingLink = document.querySelector('link[rel="stylesheet"]');
+    if (existingLink) {
+        head.removeChild(existingLink);
+    } else {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = './styles.css';
+        head.appendChild(link);
+    }
+}
+
+</script>
 </html>
 
